@@ -3,11 +3,8 @@ import Divider from "../widgets/Divider";
 import ButtonRaised from "../widgets/ButtonRaised";
 import TextLink from "../widgets/TextLink";
 import Textfield from "../widgets/Textfield";
-import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function Login() {
-  let navigate = useNavigate();
-
   return (
     <>
       <div className="w-full mx-auto bg-white px-5 py-4 flex flex-col space-y-5  sm:w-96 sm:shadow-md  lg:w-[350px] mt-48">
@@ -24,13 +21,9 @@ function Login() {
           <TextLink>{"Forgot Password?"}</TextLink>
         </div>
         <div className="w-full mx-auto bg-blue-500 shadow-lg hover:bg-blue-700 text-white rounded-full   ">
-          <ButtonRaised
-            onClick={() => {
-              navigate("/Signup");
-            }}
-          >
-            {"Sign in"}
-          </ButtonRaised>
+          <Link to="/Signup">
+            <ButtonRaised>{"Sign in"}</ButtonRaised>
+          </Link>
         </div>
         <div className="h-2 flex flow-row items-center">
           <Divider />
